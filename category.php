@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying all single posts
+ * The template for displaying listing of posts in a category
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
@@ -12,26 +12,20 @@ get_header();
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
-
+<h2 class="category-heading">Category: <?php single_cat_title(); ?></h2>
 		<?php
-	$args = array(
-'prev_text'          => 'Previous',
-'next_text'          => 'Next',
-'in_same_term'       => true,
-'taxonomy'           => 'category',
-'excluded_terms'     => array(1,2,3),
-'screen_reader_text' => 'Post navigation'
-	);
+
 		while ( have_posts() ) :
 			the_post();
 
 			get_template_part( 'template-parts/content', get_post_type() );
 
-			the_post_navigation($args);
 
 
 
 		endwhile; // End of the loop.
+		the_posts_navigation();
+
 		?>
 
 		</main><!-- #main -->

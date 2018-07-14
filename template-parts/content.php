@@ -9,26 +9,28 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>
 	<header class="entry-header">
-		<section class="container workArticle">
+		<section class="container">
 			<div class="row">
 				<div class="col-md-6 offset-md-1">
 				<!-- call artwork -->
 				<!-- end call artwork -->
 			</div> <!-- end artwork div -->
 	<!-- start section for title and author -->
-	<section class="col-md-4">
+	<section class="col-md-10">
 		<?php
 		if ( is_singular() ) :
-			the_title( '<p><span id="WorkTitle" class="entry-title">', '</p>' );
+			the_title( '<p><span class="entry-title single-post">', '</p>' );
 		else :
-			the_title( '<p><span id="WorkTitle" class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+			echo '<p><span class="entry-title"><a href="' . esc_url( get_permalink() ) . '" >';
+			echo mb_strimwidth(get_the_title(), 0, 125, '...');
+			echo '</a></p>';
+			/* the_title( '<p><span class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); */
 		endif;
 
 		if ( 'post' === get_post_type() ) :
 			?>
-			<p class="workCategory"><a href="../issueHome.html">Issue 1</a></p>
 			</section>
 		<?php endif; ?>
 	</header><!-- .entry-header -->

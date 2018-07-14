@@ -1,14 +1,14 @@
 /*!
-Theme Name: Aleph
-Theme URI: http://underscores.me/
+Theme Name: AlephBlog
+Theme URI: https://github.com/jeffreybarry/alephBlog
 Author: Jeff Barry
 Author URI: http://jeffbarry.org
-Description: Aleph is a starter WP theme with Bootstrap. I use this as the basis for my other themes. Bootstrap is loaded from a CDN rather than included with the theme files.
-Version: 1.0.1
+Description: AlephBlog is the theme for Interlitq. Bootstrap is loaded from a CDN rather than included with the theme files.
+Version: 1.0.2
 License: GNU General Public License v2 or later
 License URI: LICENSE
-Text Domain: aleph
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+Text Domain: AlephBlog
+Tags: custom-theme
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -42,7 +42,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	## Galleries
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
-# Normalize
+## Normalize
 --------------------------------------------------------------*/
 /* normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
 
@@ -466,6 +466,14 @@ big {
 font-family: 'Lato', sans-serif;font-size: 18px; font-weight: 400; color: #585858;
 }
 
+/* formats post entry title */
+.entry-title {
+	font-family: 'Cormorant Garamond', serif;font-size: 36px;display: inline-block; line-height: 1.1;}
+	.workCategory {text-align: right; font-style: italic;font-size: small;}
+	.workBody {margin-top: 40px; margin-bottom: 60px;
+	font-family: 'Lato', sans-serif;font-size: 18px; font-weight: 400; color: #585858;
+}
+
 .mission {margin-top: 40px; margin-bottom: 60px;
 font-family: 'Cormorant Garamond', serif;font-size: 16px; font-weight: 400; line-height: 1.4; font-style: italic;
 }
@@ -511,10 +519,9 @@ align-items: center;
 
 /* ==========================================================================
    Styles for work/article pages
+	 See section in style.css for posts
    ========================================================================== */
-.workArticle {
-  margin-top: 60px;
-}
+
 .readTranslation {text-align: right; font-style: italic;font-size: small;}
 
 .workArticle h2 {font-family: 'Cormorant Garamond', serif;font-size: 36px; margin-top: 80px;}
@@ -885,7 +892,60 @@ text-align: center;
   color: white;
 }
 
+.nav-link.btn-ilqmenu.active {
+  background: #C86741;
+  text-decoration: none;
+  color: #000000;
+}
+
 .nav-link {padding: 0;}
+
+/*--------------------------------------------------------------
+# WordPress Navigation Styling: Older Posts - Newer Posts links
+--------------------------------------------------------------*/
+.nav-previous {float: left;
+text-transform: uppercase;
+letter-spacing: 2px;
+text-decoration: none !important;
+text-decoration-line: none !important;
+text-decoration-style: initial !important;
+text-decoration-color: initial !important;
+padding-bottom: 7px;
+border-bottom: 1px solid #d6d6d6;
+display: inline-block;
+}
+.nav-previous a {
+	color: gray;
+}
+.nav-previous a:hover {
+	text-decoration: none !important;
+	text-decoration-line: none !important;
+	text-decoration-style: initial !important;
+	text-decoration-color: initial !important;
+	color: #990000;
+}
+
+.nav-next {float: right;
+text-transform: uppercase;
+letter-spacing: 2px;
+text-decoration: none !important;
+padding-bottom: 7px;
+border-bottom: 1px solid #d6d6d6;
+display: inline-block;
+}
+.nav-next a {
+	color: gray;
+}
+
+.nav-next a:hover {
+	text-decoration: none !important;
+	text-decoration-line: none !important;
+	text-decoration-style: initial !important;
+	text-decoration-color: initial !important;
+	color: #990000;
+}
+
+
 
 /*--------------------------------------------------------------
 # Accessibility
@@ -993,6 +1053,7 @@ text-align: center;
 .widget select {
 	max-width: 100%;
 }
+.widget-area {margin-top: 8rem;}
 
 /*--------------------------------------------------------------
 # Content
@@ -1000,6 +1061,30 @@ text-align: center;
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
+/* The following three settings could be combined into one */
+/* sets top margin on first paginated page of listings */
+body.blog>div#page>div#content>div#primary{
+	margin-top: -175px;
+}
+
+/* sets top margin on single post */
+body.single>div#page>div#content>div#primary{
+	margin-top: -175px;
+}
+
+body.category>div#page>div#content>div#primary{
+	margin-top: 175px;
+}
+/* ------------------------------ */
+
+.category-heading {
+	margin-bottom: -200px;
+}
+
+.post {
+	margin-top: 250px !important;
+}
+
 .sticky {
 	display: block;
 }

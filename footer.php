@@ -12,6 +12,8 @@
 ?>
 
 	</div><!-- #content -->
+	<!-- ***** COMMENT OUT subscription box for this release *****
+
 	<section class="container join-mailing-list">
 	<div class="row">
 	  <div class="col-md-10">
@@ -29,9 +31,10 @@
 
 
 	</section>
+-->
 	<footer id="colophon" class="site-footer">
 		<div class="site-info">
-<p> ... </p>
+<p>  </p>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page ends Bootstrap container-->
