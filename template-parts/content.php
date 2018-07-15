@@ -37,26 +37,30 @@
 
 	<?php aleph_post_thumbnail(); ?>
 
-	<div class="entry-content">
-		<?php
-		the_content( sprintf(
-			wp_kses(
-				/* translators: %s: Name of current post. Only visible to screen readers */
-				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'aleph' ),
-				array(
-					'span' => array(
-						'class' => array(),
-					),
-				)
-			),
-			get_the_title()
-		) );
+	<div class="entry-content row">
+	<div class="col-md-10 offset-md-1">
+		<article class="workBody">
+	<?php
+	the_content( sprintf(
+		wp_kses(
+			/* translators: %s: Name of current post. Only visible to screen readers */
+			__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'aleph' ),
+			array(
+				'span' => array(
+					'class' => array(),
+				),
+			)
+		),
+		get_the_title()
+	) );
 
-		wp_link_pages( array(
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'aleph' ),
-			'after'  => '</div>',
-		) );
-		?>
+	wp_link_pages( array(
+		'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'aleph' ),
+		'after'  => '</div>',
+	) );
+	?>
+		</article>
+	</div>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
