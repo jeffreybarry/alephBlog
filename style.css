@@ -806,16 +806,13 @@ padding: 2px 1px 0;
 
 
 a:link {
-color: ;
 }
 
 a:visited {
-color: ;
 }
 
 a:focus {
 	color: #990000;
-border-bottom: ;
 }
 
 a:hover {
@@ -830,7 +827,7 @@ a:active {
 ## Menus
 --------------------------------------------------------------*/
 .topbanner {color: white; }
-#main-title { color: 343234;
+#main-title { color: #343234;
     background: #cc9966;
     background: -webkit-linear-gradient(#98543c, #eb8f6b);
     background:    -moz-linear-gradient(#98543c, #eb8f6b);
@@ -1107,6 +1104,8 @@ body.category>div#page>div#content>div#primary{
 	clear: both;
 	margin: 0 0 1.5em;
 }
+
+
 
 /*--------------------------------------------------------------
 ## Comments
